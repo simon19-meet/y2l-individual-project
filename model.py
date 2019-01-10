@@ -5,6 +5,26 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-# Write your classes here :
-class Product(Base):
-    pass
+class Student(Base):
+    __tablename__="students"
+    id=Column(Integer,primary_key=True)
+    FirstName= Column(String)
+    LastName= Column(String)
+    Age= Column(Integer)
+    Gender= Column(String)
+    Email=Column(String)
+    Password=Column(String)
+
+class Teacher(Base):
+    __tablename__="teachers"
+    id=Column(Integer,primary_key=True)
+    FirstName= Column(String)
+    LastName= Column(String)
+    Age= Column(Integer)
+    Gender= Column(String)
+    Email=Column(String)
+    Password=Column(String)
+    Subject= Column(String)
+    YearsOfExperience=Column(Integer)
+    Available=Column(Boolean)
+
