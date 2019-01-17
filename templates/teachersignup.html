@@ -4,14 +4,17 @@
     </head>
     <body>
         <h1>Sign Up</h1>
+        <form id="tchrs" method="POST" action="/teachersignup">
         <input type="text" name="fname" placeholder="First Name"><br>
         <input type="text" name="lname" placeholder="Last Name"><br>
         <input type="number" name="age" placeholder="Age"><br>
-        <h3>Gender</h3><input type="radio" name="gender" value="Male"><br>
-        <input type="radio" name="gender" value="Female"><br>
+        <h3>Gender</h3><input type="radio" name="gender" value="Male">Male<br>
+        <input type="radio" name="gender" value="Female">Female<br>
         <input type="text" name="email" placeholder="Email"><br>
         <input type="password" name="password" placeholder="Password"><br>
         <input type="text" name="subject" placeholder="The Subject You Teach"><br>
         <input type="number" name="expyears" placeholder="Years of Experience"><br>
+        <button type="submit" value="Sign Up">Sign Up</button>
+    </form>
     </body>
 </html>
