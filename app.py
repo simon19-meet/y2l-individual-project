@@ -4,14 +4,17 @@ from model import *
 from database import *
 
 app = Flask(__name__)
-
-@app.route('/')
+app.secret_key=b'romkrtg8547854ufruh'
+@app.route('/',methods=['GET','POST'])
 def homepage():
-    a=login_session['FirstName']
-    return render_template("home.html",a=a)
+    if 'email' not in login_session:
+        return redirect(url_for('login'))
+    else:
+        return render_template("home.html")
 
 @app.route('/signup',methods=['GET','POST'])
 def signUp():
+    a=""
     if request.method == 'POST':
         firstName=request.form['fname']
         lastName=request.form['lname']
@@ -19,8 +22,13 @@ def signUp():
         gender=request.form['gender']
         email=request.form['email']
         password=request.form['password']
-        AddStudent(firstName,lastName,age,gender,email,password)
-        return redirect(url_for('homepage'))
+        confirm=request.form['confirm']
+        if confirm == password:
+            AddStudent(firstName,lastName,age,gender,email,password)
+            return redirect(url_for('homepage'))
+        else:
+            a="Passwords don't match"
+            return render_template("signup.html",a=a)
     else:
         return render_template("signup.html")
 
@@ -47,10 +55,26 @@ def login():
         email=request.form['email']
         password=request.form['password']
         student = GetStudentByEmail(email)
-        return redirect(url_for('homepage'))
-    else:
-        return render_template("login.html")
+        
+        if student!=None:
+            if student.Password==password:
+                login_session['FirstName']=student.FirstName
+                login_session['LastName']=student.LastName
+                login_session['Age']=student.Age
+                login_session['Gender']=student.Gender
+                login_session['Email']=student.Email
+                login_session['Password']=student.Password
+                return redirect(url_for('homepage'))
+            else:
+                txt="Incorrect password"
+        else:
+            txt="Username doesn't exist"
+    
+    return render_template("login.html",txt=txt)
 
+@app.route('/welcome',methods=['GET','POST'])
+def choose():
+    pass
 if __name__ == '__main__':
    app.run(debug = True)
 

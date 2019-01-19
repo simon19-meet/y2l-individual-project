@@ -1,9 +1,10 @@
 <html>
     <head>
-
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
     </head>
     <body>
-        
-        <h1>WELCOME {{a}}</h1>
+        <form id="home" method="GET" action="/">
+            <h1>WELCOME {{a}}</h1>
+        </form> 
     </body>
 </html>

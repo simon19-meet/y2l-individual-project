@@ -1,0 +1,37 @@
+body{
+    background-image: url("books.gif");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.buttons {
+    background-image: url("abstract_art_black_and_white_red.gif");
+    border-radius: 40px;
+    font-family: Forte;
+    color: whitesmoke;
+    font-size: 34px;
+    padding: 10px 10px 10px 10px;
+    border-width: 0px;
+    width: 30%;
+}
+
+.info {
+    background-color: whitesmoke;
+    border-radius: 40px;
+    font-family: David;
+    color: darkred;
+    border-color: black;
+    font-size: 36px;
+    padding: 10px 10px 10px 10px;
+    border-width: 4px;
+}
+
+.gender {
+    border-radius: 40px;
+    font-family: 'Forte';
+    color: black;
+    font-size: 36px;
+   
+    padding: 10px 10px 10px 10px;
+    
+}
