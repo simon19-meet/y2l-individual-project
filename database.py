@@ -21,3 +21,7 @@ def AddTeacher(firstName,lastName,age,gender,email,password,subject,yearsOfExper
 def GetStudentByEmail(email):
     stud=session.query(Student).filter_by(Email=email).first()
     return stud
+
+def GetTeacherByEmail(email):
+    t=session.query(Teacher).filter_by(Email=email).first()
+    return t

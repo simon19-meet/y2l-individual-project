@@ -1,12 +1,24 @@
 <html>
     <head>
-
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+        <title>Welcome</title>
     </head>
     <body>
-        <form id="navigation" action="/welcome">
-            <button type="submit" value="teacher" name="teacher">Teacher</button>
-            <button type="submit" value="student" name="student">Student</button>
-            <button type="submit" value="login" name="login">Log In</button>
-        </form>
+        <center>
+            <h1 class="title">Welcome to Online Learning.</h1>
+            <p class="intro">This website is dedicated for students who are curious to learn unique subjects
+                that interest them,not familiar with them, helps them in learning other subjects 
+                or they just need help in understanding them. Sign up as a teacher or as a student
+                and enjoy my website :D.
+            </p>
+            <form id="navigation" method="POST" action="/welcome">
+                <select name="choice" class="info">
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                    <option value="empty">I already have an account</option>
+                </select>
+                <button type="submit" value="proceed" class="buttons">Proceed</button>
+            </form>
+        </center>
     </body>
 </html>

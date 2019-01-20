@@ -7,7 +7,7 @@ body{
 .buttons {
     background-image: url("abstract_art_black_and_white_red.gif");
     border-radius: 40px;
-    font-family: Forte;
+    font-family: "Forte";
     color: whitesmoke;
     font-size: 34px;
     padding: 10px 10px 10px 10px;
@@ -18,7 +18,7 @@ body{
 .info {
     background-color: whitesmoke;
     border-radius: 40px;
-    font-family: David;
+    font-family: "David";
     color: darkred;
     border-color: black;
     font-size: 36px;
@@ -28,10 +28,21 @@ body{
 
 .gender {
     border-radius: 40px;
-    font-family: 'Forte';
+    font-family: "Forte";
     color: black;
     font-size: 36px;
-   
     padding: 10px 10px 10px 10px;
     
+}
+
+.title{
+    font-family:"Forte";
+    color: darkblue;
+    font-size: 22px;
+}
+
+.intro{
+    font-family:'Forte';
+    color: whitesmoke;
+    font-size: 22px;
 }
