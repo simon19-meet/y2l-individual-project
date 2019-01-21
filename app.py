@@ -7,10 +7,10 @@ app = Flask(__name__)
 app.secret_key=b'romkrtg8547854ufruh'
 @app.route('/',methods=['GET','POST'])
 def homepage():
-    if 'email' not in login_session:
-        return redirect(url_for('choose'))
-    else:
+    if 'Email' in login_session:
         return render_template("home.html")
+    else:
+        return redirect(url_for('choose'))
 
 @app.route('/signup',methods=['GET','POST'])
 def signUp():
@@ -62,7 +62,7 @@ def login():
         email=request.form['email']
         password=request.form['password']
         student = GetStudentByEmail(email)
-        teacher = GetTeacherByEmail(email)
+        teacher =GetTeacherByEmail(email)
         if student!=None:
             if student.Password==password:
                 login_session['FirstName']=student.FirstName
