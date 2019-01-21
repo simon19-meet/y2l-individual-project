@@ -25,3 +25,8 @@ def GetStudentByEmail(email):
 def GetTeacherByEmail(email):
     t=session.query(Teacher).filter_by(Email=email).first()
     return t
+
+def AddArticle(title,content,name,email):
+    a=Article(Title=title,Content=content,FirstName=name,Email=email)
+    session.add(a)
+    session.commit()

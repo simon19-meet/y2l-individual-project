@@ -6,10 +6,13 @@
     <body>
         <center>
         <form id="log" method="POST" action="/login">
-            <input type="text" name="email" placeholder="Enter Your Email" class="info"><br>
-            <input type="password" name="password" placeholder="Enter Your Password" class="info"><br>
-            <button type="submit" value="Log In" class="buttons">Log In</button><br>
-            <h3>{{txt}}</h3>
+            <table width="30%">
+                <tr><td><center><h1 class="title">Log In</h1></center></td></tr>
+                <tr><td><input type="text" name="email" placeholder="Enter Your Email" class="info"></td></tr>
+                <tr><td><input type="password" name="password" placeholder="Enter Your Password" class="info"></td></tr>
+                <tr><td><button type="submit" value="Log In" class="buttons">Log In</button></td></tr>
+                <tr><td><h3>{{txt}}</h3></td></tr>
+            </table>
         </form>
         </center>
     </body>

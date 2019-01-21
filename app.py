@@ -8,7 +8,8 @@ app.secret_key=b'romkrtg8547854ufruh'
 @app.route('/',methods=['GET','POST'])
 def homepage():
     if 'Email' in login_session:
-        return render_template("home.html")
+        a=login_session['FirstName']
+        return render_template("home.html",a=a)
     else:
         return redirect(url_for('choose'))
 
@@ -103,7 +104,10 @@ def choose():
         else:
             return redirect(url_for('login'))
     return render_template("welcome.html")
-    
+
+@app.route('/post',methods=['GET','POST'])
+def post():
+    return render_template("post.html")
 if __name__ == '__main__':
    app.run(debug = True)
 

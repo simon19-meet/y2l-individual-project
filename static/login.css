@@ -2,33 +2,40 @@ body{
     background-image: url("books.gif");
     background-repeat: no-repeat;
     background-size: 100%;
+    font-family: forte;
+}
+
+@font-face{
+    font-family: forte;
+    src: url("FORTE.TTF");
 }
 
 .buttons {
     background-image: url("abstract_art_black_and_white_red.gif");
     border-radius: 40px;
-    font-family: "Forte";
+    font-family: forte;
     color: whitesmoke;
     font-size: 34px;
     padding: 10px 10px 10px 10px;
     border-width: 0px;
-    width: 30%;
+    width: 100%;
 }
 
 .info {
     background-color: whitesmoke;
     border-radius: 40px;
-    font-family: "David";
-    color: darkred;
+    font-family: forte;
+    color: darkblue;
     border-color: black;
     font-size: 36px;
     padding: 10px 10px 10px 10px;
     border-width: 4px;
+    width:100%;
 }
 
 .gender {
     border-radius: 40px;
-    font-family: "Forte";
+    font-family: forte;
     color: black;
     font-size: 36px;
     padding: 10px 10px 10px 10px;
@@ -36,13 +43,13 @@ body{
 }
 
 .title{
-    font-family:"Forte";
+    font-family:forte;
     color: darkblue;
-    font-size: 22px;
+    font-size: 36px;
 }
 
 .intro{
-    font-family:'Forte';
+    font-family:forte;
     color: whitesmoke;
-    font-size: 22px;
+    font-size: 36px;
 }

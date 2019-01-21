@@ -28,3 +28,9 @@ class Teacher(Base):
     YearsOfExperience=Column(Integer)
     Available=Column(Boolean)
 
+class Article(Base):
+    __tablename__="articles"
+    id=Column(Integer,primary_key=True)
+    Title=Column(String)
+    Content=Column(String)
+    
