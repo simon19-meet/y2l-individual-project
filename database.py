@@ -27,6 +27,12 @@ def GetTeacherByEmail(email):
     return t
 
 def AddArticle(title,content,name,email):
-    a=Article(Title=title,Content=content,FirstName=name,Email=email)
+    a=Article(Title=title,Content=content,Publisher=name,Email=email)
     session.add(a)
     session.commit()
+
+def GetAllArticles():
+    a=session.query(Article).all()
+    articles = []
+    articles = a
+    return articles

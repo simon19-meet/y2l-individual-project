@@ -9,7 +9,8 @@ app.secret_key=b'romkrtg8547854ufruh'
 def homepage():
     if 'Email' in login_session:
         a=login_session['FirstName']
-        return render_template("home.html",a=a)
+        articles=GetAllArticles()
+        return render_template("home.html",a=a,articles=articles)
     else:
         return redirect(url_for('choose'))
 
@@ -107,7 +108,19 @@ def choose():
 
 @app.route('/post',methods=['GET','POST'])
 def post():
-    return render_template("post.html")
+    note=""
+    if request.method == 'POST':
+        title=request.form['atitle']
+        content=request.form['content']
+        name=login_session['FirstName']
+        email=login_session['Email']
+        articles=GetAllArticles()
+        if 'Title' not in articles:
+            AddArticle(title,content,name,email)
+            return redirect(url_for('homepage'))
+        else:
+            note="Article already exists"
+    return render_template("post.html",note=note)
 if __name__ == '__main__':
    app.run(debug = True)
 

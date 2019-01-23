@@ -33,4 +33,6 @@ class Article(Base):
     id=Column(Integer,primary_key=True)
     Title=Column(String)
     Content=Column(String)
+    Publisher=Column(String)
+    Email=Column(String)
     

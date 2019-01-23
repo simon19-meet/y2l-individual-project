@@ -7,7 +7,12 @@
             <form id="home" method="GET" action="/">
                 <h1 class="title">Welcome {{a}}</h1>
                 <table width="50%">
-                    <tr><td></td></tr>
+                    {% for i in articles %}
+                    <tr><td class="buttons"><center>{{i.Title}}</center><br>
+                    {{i.Content}}<br>
+                    By: {{i.Publisher}}<br>
+                    More Info: {{i.Email}}</td></tr>
+                    {% endfor %}
                 </table>
             </form>
         </center> 
