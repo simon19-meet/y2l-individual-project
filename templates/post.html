@@ -6,7 +6,8 @@
     <body>
         <ul>
             <li><a href="{{url_for('homepage')}}">Home</a></li>
-            <li><a href="{{url_for('post')}}">Post</a></li>
+            <li><a class="active" href="{{url_for('post')}}">Post</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
             <li><form method="POST" action="/logout">
             <a href="{{url_for('logout')}}">Log Out</a></form></li>
         </ul>

@@ -16,7 +16,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
   }
   
   li {
@@ -32,11 +32,11 @@ ul {
   }
   
   li a:hover:not(.active) {
-    background-color: #111;
+    background-color: rgb(39, 142, 190);
   }
   
   .active {
-    background-color: #4CAF50;
+    background-color: rgb(211, 90, 20);
   }
 
 .buttons {
@@ -87,7 +87,8 @@ ul {
     font-family:forte;
     color: darkblue;
     font-size: 36px;
-    background-color: transparent;
+    background-image: url("BlueAbstractWallpapershd.gif");
+    background-attachment: fixed;
     border: 4px solid black;
     border-radius: 40px;
     padding: 5px 5px 5px 5px;

@@ -1,0 +1,31 @@
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+
+    </head>
+    <body>
+        <ul>
+            <li><a href="{{url_for('homepage')}}">Home</a></li>
+            <li><a href="{{url_for('post')}}">Post</a></li>
+            <li><a class="active" href="{{url_for('profile')}}">Profile</a></li>
+            <li><form method="POST" action="/logout">
+                <a href="{{url_for('logout')}}">Log Out</a></form></li>
+                
+        </ul>
+    <center>
+        <form method="POST" action="/profile">
+        <h1>Profile</h1>
+            <div style="width: 50%" class="post">
+                <p>First Name: {{acc.FirstName}}</p>
+                <p>Last Name: {{acc.LastName}}</p>
+                <p>Age: {{acc.Age}}</p>
+                <p>Gender: {{acc.Gender}}</p>
+                <p>Email Address: {{acc.Email}}</p>
+                <p>Profession: {{acc.Subject}}</p>
+                <p>Years Of Experience: {{acc.YearsOfExperience}}</p>
+               
+            </div>
+        </form>
+    </center>
+    </body>
+</html>
