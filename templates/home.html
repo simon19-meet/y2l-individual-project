@@ -4,11 +4,17 @@
     </head>
     <body>
         <center>
+            <ul>
+                <li><a href="{{url_for('homepage')}}">Home</a></li>
+                <li><a href="{{url_for('post')}}">Post</a></li>
+                <li><form method="POST" action="/logout">
+                <a href="{{url_for('logout')}}">Log Out</a></form></li>
+            </ul>
             <form id="home" method="GET" action="/">
                 <h1 class="title">Welcome {{a}}</h1>
                 <table width="50%">
                     {% for i in articles %}
-                    <tr><td class="buttons"><center>{{i.Title}}</center><br>
+                    <tr><td class="post"><center>{{i.Title}}</center><br>
                     {{i.Content}}<br>
                     By: {{i.Publisher}}<br>
                     More Info: {{i.Email}}</td></tr>

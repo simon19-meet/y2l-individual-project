@@ -25,9 +25,12 @@ def signUp():
         email=request.form['email']
         password=request.form['password']
         confirm=request.form['confirm']
-        if confirm == password:
+        if confirm == password and '@' in email and '.com' in email:
             AddStudent(firstName,lastName,age,gender,email,password)
             return redirect(url_for('homepage'))
+        elif '@' not in email or '.com' not in email:
+            a="Invalid email"
+            return render_template("signup.html",a=a)
         else:
             a="Passwords don't match"
             return render_template("signup.html",a=a)
@@ -48,11 +51,14 @@ def teacherSignUp():
         subject=request.form['subject']
         yearsOfExp=request.form['expyears']
         available=True
-        if confirm==password:
+        if confirm == password and '@' in email and '.com' in email:
             AddTeacher(firstName,lastName,age,gender,email,password,subject,yearsOfExp,available)
             return redirect(url_for('homepage'))
+        elif '@' not in email or '.com' not in email:
+            a="Invalid email"
+            return render_template("teachersignup.html",a=a)
         else:
-            a="Passowrds don't match"
+            a="Passwords don't match"
             return render_template("teachersignup.html",a=a)
     else:
         return render_template("teachersignup.html")
@@ -109,18 +115,31 @@ def choose():
 @app.route('/post',methods=['GET','POST'])
 def post():
     note=""
+    if 'Subject' not in login_session:
+        note="You can't post because you are a student"
+        return render_template("post.html",note=note)
     if request.method == 'POST':
+        if 'Subject' not in login_session:
+            note="You can't post because you are a student"
+            return render_template("post.html",note=note)
         title=request.form['atitle']
         content=request.form['content']
         name=login_session['FirstName']
         email=login_session['Email']
         articles=GetAllArticles()
-        if 'Title' not in articles:
-            AddArticle(title,content,name,email)
-            return redirect(url_for('homepage'))
-        else:
-            note="Article already exists"
-    return render_template("post.html",note=note)
+        for article in articles:
+            if article.Title==title:
+                note="Article already exists"
+                return render_template("post.html",note=note)
+        AddArticle(title,content,name,email)
+        return redirect(url_for('homepage'))
+    else:
+        return render_template("post.html")
+    
+@app.route('/logout',methods=['GET','POST'])
+def logout():
+    login_session.clear()
+    return choose()
 if __name__ == '__main__':
    app.run(debug = True)
 

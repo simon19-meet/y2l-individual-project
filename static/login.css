@@ -3,12 +3,41 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: forte;
+    background-attachment: fixed;
 }
 
 @font-face{
     font-family: forte;
     src: url("FORTE.TTF");
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
 
 .buttons {
     background-image: url("abstract_art_black_and_white_red.gif");
@@ -52,4 +81,14 @@ body{
     font-family:forte;
     color: whitesmoke;
     font-size: 36px;
+}
+
+.post{
+    font-family:forte;
+    color: darkblue;
+    font-size: 36px;
+    background-color: transparent;
+    border: 4px solid black;
+    border-radius: 40px;
+    padding: 5px 5px 5px 5px;
 }
