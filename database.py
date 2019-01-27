@@ -9,7 +9,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 def AddStudent(firstName,lastName,age,gender,email,password):
-    st=Student(FirstName=firstName,LastName=lastName,Age=age,Email=email,Password=password)
+    st=Student(FirstName=firstName,LastName=lastName,Age=age,Gender=gender,Email=email,Password=password)
     session.add(st)
     session.commit()
 

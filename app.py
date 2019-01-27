@@ -145,12 +145,16 @@ def logout():
 @app.route('/profile',methods=['GET','POST'])
 def profile():
     acc=None
+    subj=None
+    yrs=None
     email=login_session['Email']
     if 'Subject' in login_session:
         acc=GetTeacherByEmail(email)
+        subj=acc.Subject
+        yrs=acc.YearsOfExperience
     else:
         acc=GetStudentByEmail(email)
-    return render_template("profile.html",acc=acc)
+    return render_template("profile.html",acc=acc,subj=subj,yrs=yrs)
 if __name__ == '__main__':
    app.run(debug = True)
 
