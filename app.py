@@ -10,6 +10,7 @@ def homepage():
     if 'Email' in login_session:
         a=login_session['FirstName']
         articles=GetAllArticles()
+        
         return render_template("home.html",a=a,articles=articles)
     else:
         return redirect(url_for('choose'))

@@ -14,9 +14,9 @@
         <center>
             <form id="add" method="POST" action="/post">
                 <table width="40%">
-                    <tr><td><center><h1 class="title">Post an Article</h1></center></td></tr>
-                    <tr><td><input type="text" name="atitle" placeholder="Article Title" class="info"></td></tr>
-                    <tr><td><textarea name="content" placeholder="Write your article here" class="info"></textarea></td></tr>
+                    <tr><td><center><h1 class="page_title">Post an Article</h1></center></td></tr>
+                    <tr><td><input type="text" name="atitle" placeholder="Article Title" class="info" required></td></tr>
+                    <tr><td><textarea name="content" placeholder="Write your article here" class="info" required></textarea></td></tr>
                     <tr><td><button type="submit" value="post" class="buttons">Post</button></td></tr>
                     <tr><td><h3>{{note}}</h3></td></tr>
                 </table>

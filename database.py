@@ -14,7 +14,7 @@ def AddStudent(firstName,lastName,age,gender,email,password):
     session.commit()
 
 def AddTeacher(firstName,lastName,age,gender,email,password,subject,yearsOfExperience,available):
-    t=Teacher(FirstName=firstName,LastName=lastName,Age=age,Gender=gender,Email=email,Password=password,YearsOfExperience=yearsOfExperience,Available=available)
+    t=Teacher(FirstName=firstName,LastName=lastName,Age=age,Gender=gender,Email=email,Password=password,Subject=subject,YearsOfExperience=yearsOfExperience,Available=available)
     session.add(t)
     session.commit()
 
