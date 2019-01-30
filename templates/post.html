@@ -1,9 +1,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
-
-    </head>
-    <body>
         <ul>
             <li><a href="{{url_for('homepage')}}">Home</a></li>
             <li><a class="active" href="{{url_for('post')}}">Post</a></li>
@@ -11,6 +8,9 @@
             <li><form method="POST" action="/logout">
             <a href="{{url_for('logout')}}">Log Out</a></form></li>
         </ul>
+    </head>
+    <body>
+        
         <center>
             <form id="add" method="POST" action="/post">
                 <table width="40%">
