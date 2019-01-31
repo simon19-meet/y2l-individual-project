@@ -1,8 +1,9 @@
 body{
     background-image: url("books.gif");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     font-family: forte;
+    margin: 0;
     background-attachment: fixed;
 }
 
